@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {/* main body */}
-        <main className={`w-full h-full`}>
+        <main className={`container mx-auto px-6 lg:px-48 py-14  w-full h-full`}>
           {children}
         </main>
 
