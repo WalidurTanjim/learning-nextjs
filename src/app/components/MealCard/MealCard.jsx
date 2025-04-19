@@ -1,8 +1,6 @@
 import Link from "next/link";
 
 const MealCard = ({ meal }) => {
-    console.log("Meal from MealCard", meal);
-
     return (
         <div className={`meal p-2 border border-gray-300 rounded-lg hover:shadow-xl`}>
             <img src={meal?.strMealThumb} alt="Meal Image" className={`w-full h-[120px] rounded-md`}/>

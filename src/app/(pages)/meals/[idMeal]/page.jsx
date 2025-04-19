@@ -8,7 +8,7 @@ const MealDetailsPage = async ({ params }) => {
 
     return (
         <div className={`meal-details`}>
-            <img src={existMeal?.strMealThumb} alt="Meal Image" className={`w-full h-[175px] rounded-lg border border-gray-300`}/>
+            <img src={existMeal?.strMealThumb} alt="Meal Image" className={`w-full h-[175px] md:h-[250px] xl:h-[350px] rounded-lg border border-gray-300`}/>
 
             <div className={`mt-5`}>
                 <div className="flex items-center justify-between">

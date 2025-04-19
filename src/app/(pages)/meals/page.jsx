@@ -10,7 +10,7 @@ const MealsPage = async () => {
         <section className={`meals-page w-full`}>
             <h1 className={`text-2xl md:text-3xl lg:text-4xl font-medium text-slate-700 text-center`}>All Meals In Here</h1>
 
-            <div className={`mt-12 grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6`}>
+            <div className={`mt-12 grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}>
                 {
                     data?.map(meal => <MealCard key={meal?.idMeal} meal={meal} />)
                 }
