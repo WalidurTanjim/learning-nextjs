@@ -1,4 +1,4 @@
-const loading = () => {
+const LoadingMeals = () => {
     return (
         <section className={`loading-page w-full h-screen flex items-center justify-center bg-[#fff]`}>
             <h1 className={`text-2xl font-medium text-slate-700`}>Loading page runing...</h1>
@@ -6,4 +6,4 @@ const loading = () => {
     );
 };
 
-export default loading;
+export default LoadingMeals;
