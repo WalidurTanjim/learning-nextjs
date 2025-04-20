@@ -1,14 +1,15 @@
 import Link from "next/link";
 
 const MealCard = ({ meal }) => {
-    return (
-        <div className={`meal p-2 border border-gray-300 rounded-lg hover:shadow-xl`}>
-            <img src={meal?.strMealThumb} alt="Meal Image" className={`w-full h-[120px] rounded-md`}/>
+    const { idMeal, strMeal, strMealThumb, strInstructions } = meal;
 
-            <div className={`mt-3`}>
-                <h1 className={`text-lg text-semibold text-slate-700`}>{meal?.strMeal}</h1>
-                <p className={`text-sm text-gray-500 my-1`}>{meal?.strInstructions.length > 85 ? meal?.strInstructions.slice(0, 85) : meal?.strInstructions}</p>
-                <Link href={`/meals/mealDetails/${meal?.idMeal}`}><button className={`px-4 py-1.5 text-sm font-medium text-white bg-slate-700 hover:bg-slate-600 active:bg-slate-700 rounded-md`}>See Details</button></Link>
+    return (
+        <div className={`meal group p-2 border border-gray-300 rounded-lg`}>
+            <img src={strMealThumb} alt="Meal Image" className={`w-full h-[125px] rounded-md border border-gray-200`} />
+
+            <div className={`mt-2`}>
+                <h1 className={`font-semibold text-slate-700`}>{strMeal}</h1>
+                <Link href={`/meals/mealDetails/${idMeal}`}><button type="button" className={`px-3 py-1 text-xs font-medium border border-gray-300 rounded-md mt-2 hover:bg-gray-200 active:bg-white`}>Show Details</button></Link>
             </div>
         </div>
     );
