@@ -8,7 +8,7 @@ const MealCard = ({ meal }) => {
             <div className={`mt-3`}>
                 <h1 className={`text-lg text-semibold text-slate-700`}>{meal?.strMeal}</h1>
                 <p className={`text-sm text-gray-500 my-1`}>{meal?.strInstructions.length > 85 ? meal?.strInstructions.slice(0, 85) : meal?.strInstructions}</p>
-                <Link href={`/meals/${meal?.idMeal}`}><button className={`px-4 py-1.5 text-sm font-medium text-white bg-slate-700 hover:bg-slate-600 active:bg-slate-700 rounded-md`}>See Details</button></Link>
+                <Link href={`/meals/mealDetails/${meal?.idMeal}`}><button className={`px-4 py-1.5 text-sm font-medium text-white bg-slate-700 hover:bg-slate-600 active:bg-slate-700 rounded-md`}>See Details</button></Link>
             </div>
         </div>
     );
