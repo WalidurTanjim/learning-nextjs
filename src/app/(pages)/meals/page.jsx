@@ -1,10 +1,19 @@
-
 import axios from "axios";
 import MealCard from "@/app/components/MealCard/MealCard";
 
-const MealsPage = async () => {
+export const getMeals = async() => {
+    try{
         const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
         const data = await res.data.meals;
+        return data;
+    }catch(err){
+        console.error(err);
+        return []
+    }
+}
+
+const MealsPage = async () => {
+        const meals = await getMeals();
 
     return (
         <section className={`meals-page w-full`}>
@@ -12,7 +21,7 @@ const MealsPage = async () => {
 
             <div className={`mt-12 grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}>
                 {
-                    data?.map(meal => <MealCard key={meal?.idMeal} meal={meal} />)
+                    meals?.map(meal => <MealCard key={meal?.idMeal} meal={meal} />)
                 }
             </div>
         </section>
