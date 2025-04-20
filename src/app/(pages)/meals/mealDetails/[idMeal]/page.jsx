@@ -1,10 +1,9 @@
-import axios from "axios";
+import { getMeals } from "../../page";
 
 const MealDetailsPage = async ({ params }) => {
     const { idMeal } = params;
-    const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
-    const data = await res.data.meals;
-    const existMeal = await data.find(meal => meal?.idMeal === idMeal);
+    const meals = await getMeals();
+    const existMeal = await meals.find(meal => meal?.idMeal === idMeal);
 
     return (
         <div className={`meal-details`}>
